@@ -1,0 +1,146 @@
+/* --- 全体設定 --- */
+body {
+  font-family: "Segoe UI", "Hiragino Kaku Gothic ProN", sans-serif;
+  background: linear-gradient(to bottom right, #e0f7fa, #fff3e0);
+  text-align: center;
+  padding: 50px 20px;
+  margin: 0;
+}
+
+/* --- タイトル --- */
+h1 {
+  font-size: 3rem;
+  color: #00695c;
+  margin-bottom: 40px;
+  text-shadow: 2px 2px 4px rgba(0,0,0,0.15);
+}
+
+/* --- 数字表示 --- */
+#numberArea {
+  font-size: 6rem;
+  font-weight: bold;
+  color: #004d40;
+  background-color: #b2dfdb;
+  border: 4px solid #004d40;
+  border-radius: 20px;
+  width: 240px;
+  margin: 0 auto 30px;
+  padding: 25px;
+  box-shadow: 0 6px 15px rgba(0,0,0,0.2);
+  transition: transform 0.2s ease-in-out;
+}
+
+#numberArea:hover {
+  transform: scale(1.05);
+}
+
+/* --- ボタングループ全体 --- */
+.button-group {
+  display: flex;
+  justify-content: center;
+  gap: 25px;
+  flex-wrap: wrap;
+  margin-bottom: 40px;
+}
+
+/* --- 各ボタン共通スタイル --- */
+.button-group button {
+  font-size: 1.3rem;
+  font-weight: bold;
+  padding: 15px 25px;
+  width: 180px;
+  border: none;
+  border-radius: 12px;
+  color: white;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+/* --- カウントアップボタン --- */
+#countUpButton {
+  background-color: #42a5f5;
+}
+#countUpButton:hover {
+  background-color: #1e88e5;
+  transform: translateY(-2px);
+}
+
+/* --- カウントダウンボタン --- */
+#countDownButton {
+  background-color: #ffb74d;
+}
+#countDownButton:hover {
+  background-color: #ffa726;
+  transform: translateY(-2px);
+}
+
+/* --- リセットボタン --- */
+#resetButton {
+  background-color: #ef5350;
+}
+#resetButton:hover {
+  background-color: #e53935;
+  transform: translateY(-2px);
+}
+
+/* --- メッセージエリア（未使用） --- */
+#messageArea {
+  font-size: 1.2rem;
+  color: #555;
+  margin-top: 20px;
+}
+
+/* --- 画像エリア --- */
+#imageArea {
+  margin-top: 40px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#imageArea img {
+  width: 320px;
+  height: auto;
+  border: 6px solid #ccc;
+  border-radius: 20px;
+  box-shadow: 0 6px 18px rgba(0,0,0,0.25);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+#imageArea img:hover {
+  transform: scale(1.05);
+  box-shadow: 0 8px 22px rgba(0,0,0,0.35);
+}
+
+
+/*ここからSP対応*/
+/* スマートフォン画面サイズ（幅768px以下）のときの専用スタイル */
+@media screen and (max-width: 768px) {
+  /* 数字の表示ボックスを少し小さめに */
+  #numberArea {
+    width: 180px;
+    font-size: 4rem;
+    padding: 20px;
+  }
+
+  /* ボタンを縦に並べる（1カラム） */
+  .button-group {
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+  }
+
+  .button-group button {
+    width: 90%; /* 画面幅の90%まで広げる */
+    max-width: 300px;
+    font-size: 1.2rem;
+    padding: 14px 20px;
+  }
+
+  /* 画像サイズも画面幅に合わせて調整 */
+  #imageArea img {
+    width: 90%;
+    max-width: 320px;
+  }
+}
